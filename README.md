@@ -1,1 +1,1 @@
-# Kanban-Board
+# JavaScript-Capstone
