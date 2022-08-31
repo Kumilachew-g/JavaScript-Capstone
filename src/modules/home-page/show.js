@@ -48,5 +48,5 @@ const displayShows = (shows) => {
     );
     showMoviesContainer.displayMovies();
   });
-}
+};
 export default displayShows;
