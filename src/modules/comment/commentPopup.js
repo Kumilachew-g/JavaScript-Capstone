@@ -1,11 +1,5 @@
 import { lookupFetch, fetchComments } from '../api/showApi.js';
 
-const addItemToList = (ul, arr) => {
-  arr.forEach((el) => {
-    ul.innerHTML += `<li class= "comment-list-item my-1" >${el.creation_date} ${el.username}: ${el.comment}</li>`;
-  });
-};
-
 const getCounts = (array) => array.length;
 
 export default async function showCommentPage(showId) {
@@ -70,7 +64,6 @@ export default async function showCommentPage(showId) {
         </div>
       `;
   const ul = document.querySelector('.comment-lists');
-  addItemToList(ul, commentsInformation);
 
   const closeButton = document.querySelector('.popup-close');
   closeButton.addEventListener('click', () => modalComment.classList.remove('active'));
