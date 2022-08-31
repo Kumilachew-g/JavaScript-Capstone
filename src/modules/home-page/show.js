@@ -1,3 +1,5 @@
+import showCommentPage from '../comment/commentPopup.js';
+
 class ShowMoviesContainer {
   constructor(showImage, showName, showLikes, showId) {
     this.showImage = showImage;
@@ -29,10 +31,14 @@ class ShowMoviesContainer {
       'align-items-baseline',
       'mt-2',
     );
+
     divInfo.append(showTitle, likeButton);
     const commentButton = document.createElement('button');
     commentButton.classList.add('mt-2');
     commentButton.innerText = 'Comment';
+
+    commentButton.addEventListener('click', () => showCommentPage(this.showId));
+
     container.append(showImg, divInfo, numLikes, commentButton);
     showsPanel.append(container);
   }
