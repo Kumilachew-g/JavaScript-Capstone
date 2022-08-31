@@ -1,11 +1,20 @@
 import showCommentPage from '../comment/commentPopup.js';
+import { likeMovie, getLikes } from '../api/involmentApi.js';
 
 class ShowMoviesContainer {
   constructor(showImage, showName, showLikes, showId) {
     this.showImage = showImage;
     this.showName = showName;
     this.showLikes = showLikes;
+    this.updateLikes = this.updateLikes.bind(this);
+    this.updateLikes.numLikesDisplay = null;
     this.showId = showId;
+  }
+
+  updateLikes() {
+    this.numLikesDisplay.innerText = this.showLikes === 1
+      ? `${this.showLikes} Like`
+      : `${this.showLikes} Likes`;
   }
 
   displayMovies() {
@@ -24,6 +33,13 @@ class ShowMoviesContainer {
     this.numLikesDisplay = numLikes;
     const likeButton = document.createElement('i');
     likeButton.classList.add('fa', 'fa-heart');
+    likeButton.addEventListener('click', async () => {
+      const status = await likeMovie(this.showId);
+      if (status === 201) {
+        this.showLikes += 1;
+        this.updateLikes();
+      }
+    });
     const divInfo = document.createElement('div');
     divInfo.classList.add(
       'd-flex',
@@ -31,21 +47,23 @@ class ShowMoviesContainer {
       'align-items-baseline',
       'mt-2',
     );
-
     divInfo.append(showTitle, likeButton);
     const commentButton = document.createElement('button');
     commentButton.classList.add('mt-2');
     commentButton.innerText = 'Comment';
-
     commentButton.addEventListener('click', () => showCommentPage(this.showId));
-
     container.append(showImg, divInfo, numLikes, commentButton);
     showsPanel.append(container);
+    this.updateLikes();
   }
 }
-const displayShows = (shows) => {
+const displayShows = async (shows) => {
+  const result = await getLikes();
   shows.forEach((show) => {
-    const numLikes = 0;
+    let numLikes = 0;
+    numLikes = result.likes.find((item) => item.item_id === show.id)
+      ? result.likes.find((item) => item.item_id === show.id).likes
+      : 0;
     const showMoviesContainer = new ShowMoviesContainer(
       show.image.original,
       show.name,
