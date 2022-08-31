@@ -37,7 +37,7 @@ class ShowMoviesContainer {
     showsPanel.append(container);
   }
 }
-async function displayShows(shows) {
+const displayShows = (shows) => {
   shows.forEach((show) => {
     const numLikes = 0;
     const showMoviesContainer = new ShowMoviesContainer(
