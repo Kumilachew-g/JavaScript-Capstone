@@ -4,6 +4,7 @@
 >JavaScript-Capstone
 <<<<<<< HEAD
 ## Live Demo
+<<<<<<< HEAD
 [live demo](https://https://kumilachew-g.github.io/JavaScript-Capstone/dist/)
 <<<<<<< HEAD
 =======
@@ -20,6 +21,9 @@
 [live video]([Uploading video1955166575 (1).mp4…](https://drive.google.com/file/d/1EK36uNkOX3a9AZgtJUTRioslMR6vOUfP/view?usp=sharing))
 
 >>>>>>> 6390679 (Update README.md)
+=======
+[live demo](https://kumilachew-g.github.io/JavaScript-Capstone/dist/)
+>>>>>>> ee44328 (Update README.md)
 # Description
 
 > The JavaScript capstone project is about building our own web application based on an external API. we were select an API that provides data about a topic that you like and then build the webapp around it. The webapp have 2 user interfaces 
