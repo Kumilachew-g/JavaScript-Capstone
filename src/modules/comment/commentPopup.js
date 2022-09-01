@@ -12,7 +12,10 @@ const addComments = async (ul, arr) => {
 
 const getCounts = (arr) => arr.length;
 
-const counterIncrement = (commentTitle, commentsInfo) => {};
+const counterIncrement = (commentTitle, commentsInfo) => {
+  const commentValue = getCounts(commentsInfo) + 1;
+  commentTitle.textContent = `Comments (${commentValue})`;
+};
 
 export default async function showCommentPage(showId) {
   const showInformation = await lookupFetch(showId);
