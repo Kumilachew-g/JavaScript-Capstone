@@ -5,7 +5,7 @@
 ## Live Demo
 [live demo](https://https://kumilachew-g.github.io/JavaScript-Capstone/dist/)
 
-[live video](https://drive.google.com/drive/folders/1LKnvBZQZUrr2avBVavjTqIma6-30xM_g)
+[live video](https://microverse-students.slack.com/files/U03KDFJJU7K/F040NUY8E77/tadess_and_kumilachew.mp4)
 
 # Description
 
