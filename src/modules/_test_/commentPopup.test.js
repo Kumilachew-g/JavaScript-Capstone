@@ -46,7 +46,7 @@ describe('Test a function counting number of comments', () => {
           username: 'Dawit',
           comment: 'very good',
         },
-      ])
+      ]),
     ).toEqual(1);
   });
 
