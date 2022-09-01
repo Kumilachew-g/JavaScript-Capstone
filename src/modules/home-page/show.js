@@ -10,7 +10,8 @@ class ShowMoviesContainer {
     this.updateLikes.numLikesDisplay = null;
     this.showId = showId;
   }
-// update number of likes 
+
+  // update number of likes
   updateLikes() {
     this.numLikesDisplay.innerText = this.showLikes === 1
       ? `${this.showLikes} Like`
@@ -61,7 +62,7 @@ const displayShows = async (shows) => {
   const result = await getLikes();
   shows.forEach((show) => {
     let numLikes = 0;
- // counter number of likes   
+    // counter number of likes
     numLikes = result.likes.find((item) => item.item_id === show.id)
       ? result.likes.find((item) => item.item_id === show.id).likes
       : 0;
