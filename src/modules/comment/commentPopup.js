@@ -1,6 +1,18 @@
-import { lookupFetch, fetchComments } from '../api/showApi.js';
+import {
+  lookupFetch,
+  fetchComments,
+  showCommentsInApi,
+} from '../api/showApi.js';
 
-const getCounts = (array) => array.length;
+const addComments = async (ul, arr) => {
+  arr.forEach((element) => {
+    ul.innerHTML += `<li class="list-items-comments my-1">${element.creation_date} ${element.username}: ${element.comment}</li>`;
+  });
+};
+
+const getCounts = (arr) => arr.length;
+
+const counterIncrement = (commentTitle, commentsInfo) => {};
 
 export default async function showCommentPage(showId) {
   const showInformation = await lookupFetch(showId);
@@ -9,7 +21,7 @@ export default async function showCommentPage(showId) {
   modalComment.classList.add('active');
 
   modalComment.innerHTML = `
-        <div
+      <div
               class="
                 modal-content
                 d-flex
@@ -24,7 +36,7 @@ export default async function showCommentPage(showId) {
                   alt="shows"
                   class="popup-image"
                 />
-                <div class="popup-close"> &times;</div>
+                <div class="popup-close">&times;</div>
               </div>
               <h3 class="popup-title my-4">${showInformation.name}</h3>
               <div class="info d-flex flex-row my-2 w-75">
@@ -42,29 +54,52 @@ export default async function showCommentPage(showId) {
               <h4 class="comments-title my-2">Comments (${getCounts(
     commentsInformation,
   )})</h4>
-              <ul class=" list-group list-unstyled comment-lists "></ul>
-              <h3 class=" my-3" add-comment>Add a comment</h3>
-              <form class="align-items-start d-flex flex-column align-items-start" action="#">
+              <ul class="comment-lists list-group list-unstyled"></ul>
+              <h5 class="add-comment my-4">Add a comment</h5>
+            <form class="d-flex flex-column align-items-start" action="#">
                 <input
-                    id="commenter-name"
+                    class="form-control"
                     type="text"
+                    id="name"
                     name="name"
                     placeholder="Your name"
                 /><br />
                 <textarea
-                    id="commenter-insight"
+                    class="form-control"
                     type="text"
-                    name="commenter-insight"
+                    id="insight"
+                    name="insight"
                     placeholder="Your insights"
                     rows="3" 
                     cols="48"
                 ></textarea><br />
-                <input id="submit-btn" type="submit" value="Comment" />
+                <input class="btn btn-dark" type="submit" id="submit-btn" value="Comment" />
             </form>
         </div>
       `;
   const ul = document.querySelector('.comment-lists');
+  addComments(ul, commentsInformation);
 
   const closeButton = document.querySelector('.popup-close');
   closeButton.addEventListener('click', () => modalComment.classList.remove('active'));
+
+  const commenterName = document.querySelector('#name');
+  const UserInsight = document.querySelector('#insight');
+  const commentForm = document.querySelector('form');
+  const commentTitle = document.querySelector('.comments-title');
+  commentForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    showCommentsInApi(showId, commenterName.value, UserInsight.value);
+    addComments(ul, [
+      {
+        creation_date: '2022-08-30',
+        username: commenterName.value,
+        comment: UserInsight.value,
+      },
+    ]);
+
+    commenterName.value = '';
+    UserInsight.value = '';
+    counterIncrement(commentTitle, commentsInformation);
+  });
 }
