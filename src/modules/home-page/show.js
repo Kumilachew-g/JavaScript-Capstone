@@ -12,9 +12,10 @@ class ShowMoviesContainer {
   }
 
   updateLikes() {
-    this.numLikesDisplay.innerText = this.showLikes === 1
-      ? `${this.showLikes} Like`
-      : `${this.showLikes} Likes`;
+    this.numLikesDisplay.innerText =
+      this.showLikes === 1
+        ? `${this.showLikes} Like`
+        : `${this.showLikes} Likes`;
   }
 
   displayMovies() {
@@ -45,7 +46,7 @@ class ShowMoviesContainer {
       'd-flex',
       'justify-content-between',
       'align-items-baseline',
-      'mt-2',
+      'mt-2'
     );
     divInfo.append(showTitle, likeButton);
     const commentButton = document.createElement('button');
@@ -68,7 +69,7 @@ const displayShows = async (shows) => {
       show.image.original,
       show.name,
       numLikes,
-      show.id,
+      show.id
     );
     showMoviesContainer.displayMovies();
   });
