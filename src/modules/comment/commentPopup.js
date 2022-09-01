@@ -10,7 +10,7 @@ const addComments = async (ul, arr) => {
   });
 };
 
-const getCounts = (arr) => arr.length;
+export const getCounts = (arr) => arr.length;
 
 const counterIncrement = (commentTitle, commentsInfo) => {
   const commentValue = getCounts(commentsInfo) + 1;
