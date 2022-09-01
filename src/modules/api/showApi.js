@@ -1,6 +1,5 @@
 const mainUrl = 'https://api.tvmaze.com';
-const involvementMainUrl =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
+const involvementMainUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const apiId = 'iagFZ6Xd4kMX1u8bmGvZ';
 const lookupFetch = async (showId) => {
   const url = `${mainUrl}/shows/${showId}`;

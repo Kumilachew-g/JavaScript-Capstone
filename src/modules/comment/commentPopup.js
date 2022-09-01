@@ -46,14 +46,14 @@ export default async function showCommentPage(showId) {
                 </div>
                 <div class="categories d-flex flex-column align-items-start w-50">
                   <h5>Release Date : ${
-                    showInformation.premiered.split('-')[0]
-                  }</h5>
+  showInformation.premiered.split('-')[0]
+}</h5>
                   <h5>Rating : ${showInformation.rating.average}</h5>
                 </div>
               </div>
               <h4 class="comments-title my-2">Comments (${getCounts(
-                commentsInformation
-              )})</h4>
+    commentsInformation,
+  )})</h4>
               <ul class="comment-lists list-group list-unstyled"></ul>
               <h5 class="add-comment my-4">Add a comment</h5>
             <form class="d-flex flex-column align-items-start" action="#">
@@ -81,9 +81,7 @@ export default async function showCommentPage(showId) {
   addComments(ul, commentsInformation);
 
   const closeButton = document.querySelector('.popup-close');
-  closeButton.addEventListener('click', () =>
-    modalComment.classList.remove('active')
-  );
+  closeButton.addEventListener('click', () => modalComment.classList.remove('active'));
 
   const commenterName = document.querySelector('#name');
   const UserInsight = document.querySelector('#insight');

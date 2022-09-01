@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await lookupFetch(98),
     await lookupFetch(99),
     await lookupFetch(11),
-    await lookupFetch(111)
+    await lookupFetch(111),
   );
   await createMoviesApp();
   await displayShows(moviesShows);
