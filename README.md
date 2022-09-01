@@ -16,8 +16,9 @@ A popup window with more data about an item that you can use to comment on it or
 
 ## Screenshots
 
-Screenshot (172).png
-Screenshot (173).png
+![Screenshot (172)](https://user-images.githubusercontent.com/85793292/187984008-14e0b63a-3f08-479d-b451-28eb78b8526d.png)
+
+![Screenshot (173)](https://user-images.githubusercontent.com/85793292/187984043-9d1eb515-8af1-4e17-88fa-7b6c3ff52178.png)
 
 
 ## Getting Started
