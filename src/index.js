@@ -1,6 +1,6 @@
 import './assets/css/style.css';
 import { lookupFetch } from './modules/api/showApi.js';
-import displayShows from './modules/home-page/show.js';
+import { displayShows, countItems } from './modules/home-page/show.js';
 import { createMoviesApp } from './modules/api/involmentApi.js';
 
 const moviesShows = [];
@@ -22,4 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   );
   await createMoviesApp();
   await displayShows(moviesShows);
+  document.getElementById('movies-id').innerText = `Movies(${countItems(
+    moviesShows,
+  )})`;
 });

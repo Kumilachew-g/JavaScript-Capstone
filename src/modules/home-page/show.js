@@ -75,4 +75,7 @@ const displayShows = async (shows) => {
     showMoviesContainer.displayMovies();
   });
 };
-export default displayShows;
+
+const countItems = (movies) => movies.length;
+
+export { countItems, displayShows };
