@@ -21,7 +21,9 @@ export default async function showCommentPage(showId) {
   const showInformation = await lookupFetch(showId);
   const commentsInformation = await fetchComments(showId);
   const modalComment = document.querySelector('.modal-comment');
+  const overlayModal = document.querySelector('#overlay');
   modalComment.classList.add('active');
+  overlayModal.classList.add('active');
 
   modalComment.innerHTML = `
       <div
@@ -84,7 +86,8 @@ export default async function showCommentPage(showId) {
   addComments(ul, commentsInformation);
 
   const closeButton = document.querySelector('.popup-close');
-  closeButton.addEventListener('click', () => modalComment.classList.remove('active'));
+  closeButton.addEventListener('click', () => modalComment.classList.remove('active'),
+    overlayModal.classList.remove('active'));
 
   const commenterName = document.querySelector('#name');
   const UserInsight = document.querySelector('#insight');

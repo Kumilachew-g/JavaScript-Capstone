@@ -22,7 +22,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   );
   await createMoviesApp();
   await displayShows(moviesShows);
-  document.getElementById('movies-id').innerText = `Movies(${countItems(
-    moviesShows,
-  )})`;
 });

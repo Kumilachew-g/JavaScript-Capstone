@@ -28,7 +28,7 @@
 .modal-comment {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   left: 0;
   top: 0;
   width: 100%;
@@ -41,12 +41,31 @@
   display: block;
 }
 
+#overlay {
+  backdrop-filter: blur(8px);
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 13;
+  display: none;
+  pointer-events: all;
+}
+
+#overlay.active {
+  display: block;
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: 1% auto;
   padding: 2% 5%;
   border: 1px solid #888;
-  max-width: 50%;
+  width: 60%;
 }
 
 .popup-image {
@@ -71,4 +90,14 @@
 
 .list-items-comments {
   text-align: start !important;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+    background-color: #fefefe;
+    margin: 1% auto;
+    padding: 2% 5%;
+    border: 1px solid #888;
+    max-width: 100%;
+  }
 }
