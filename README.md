@@ -17,7 +17,7 @@
 >>>>>>> b46f431 (update readme file)
 =======
 
-[live video](https://microverse-students.slack.com/files/U03KDFJJU7K/F040NUY8E77/tadess_and_kumilachew.mp4)
+[live video](Uploading video1955166575 (1).mp4…)
 
 >>>>>>> 6390679 (Update README.md)
 # Description
