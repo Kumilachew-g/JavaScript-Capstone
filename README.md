@@ -5,7 +5,7 @@
 ## Live Demo
 [live demo](https://https://kumilachew-g.github.io/JavaScript-Capstone/dist/)
 
-[live video](Uploading video1955166575 (1).mp4…)
+[live video]([Uploading video1955166575 (1).mp4…](https://drive.google.com/file/d/1EK36uNkOX3a9AZgtJUTRioslMR6vOUfP/view?usp=sharing))
 
 # Description
 
